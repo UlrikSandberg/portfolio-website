@@ -1,0 +1,10 @@
+.sectionSeperatorContainer {
+    background-image: linear-gradient(transparent 0%, white 50%, #eeeeee 100%);
+
+    margin: -7vh 0 0 0;
+    min-height: 7vh;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}

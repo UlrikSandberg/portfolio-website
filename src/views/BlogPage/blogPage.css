@@ -1,0 +1,14 @@
+.blogPageBackgroundImg {
+    height: 400px;
+}
+
+.blogHeaderContainer {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
