@@ -9,8 +9,7 @@ class TechnicalInfo extends React.Component {
         <div className="technicalDescriptionContainer">
           <h3 className="technicalInfoTitle">I Speak Different Languages</h3>
           <br></br>
-          <br></br>
-          <div>
+          <div className="technicalDescription">
             I have primarily been developing within the - C#, .Net Core,
             Xamarin.Forms world. However, I <b>speak</b> other languages too!
             Fx. <b>Java</b>, <b>Python</b> and <b>JavaScript</b>.<br></br>
