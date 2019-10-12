@@ -1,0 +1,107 @@
+.terminalContainer {
+    display: flex;
+    margin-top: 4rem;
+    margin-bottom: 200px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.terminalTitle {
+    display: inline-block;
+    position: relative;
+    margin: 1.75rem 0 0.875rem;
+    min-height: 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+}
+
+.terminalWindow {
+    width: 585px;
+    height: 370px;
+    background-color: rgba(0,0,0,0.9);
+    margin-bottom: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.terminalWindowTopBar {
+    width: 100%;
+    height: 20px;
+    background-color: #393a3b;
+    display: flex;
+}
+
+.terminalWindowMenuPoints {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+    width: 64px;
+    justify-content: space-evenly;
+}
+
+.terminalWindowTopBarTitle {
+    display:flex;
+    height: 20px;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: normal;
+    color:rgb(177,177,177);
+}
+
+.terminalWindowTopBarIcon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+.redQuit {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff605c;
+}
+
+.yellowMinimize {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffbd44;
+}
+
+.greenEnhance {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00ca4e;
+}
+
+.terminalWindowContent {
+    width: 100%;
+    height: calc(100% - 20px);
+}
+.terminalWindowTextArea {
+    width: 100%;
+    height: 100%;
+    color: #2dfe12;
+    font-family: 'Andale Mono';
+    font-size: 16px;
+    margin-left: 5px;
+    background-color: transparent;
+    outline: none;
+    border-width: 0px;
+    padding-bottom: 20px;
+    resize: none;
+}
+
+.terminalWindowInput {
+    
+}
+
+

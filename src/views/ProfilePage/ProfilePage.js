@@ -7,6 +7,7 @@ import SectionSeperator from "../../Components/SectionSeperator/SectionSeperator
 import Info from "../../Components/Info/Info";
 import MainContentCard from "../../Components/MainContentCard/MainContentCard";
 import TechnicalInfo from "../../Components/Info/TechnicalInfo";
+import Terminal from "../../Components/Terminal/Terminal";
 
 import ThreeCanvas from "../../Components/Three/ThreeCanvas";
 
@@ -21,6 +22,8 @@ const ProfilePage = () => {
       <MainContentCard>
         <Info></Info>
         <TechnicalInfo></TechnicalInfo>
+        <Terminal></Terminal>
+        <textarea></textarea>
       </MainContentCard>
     </div>
   );
