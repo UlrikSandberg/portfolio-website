@@ -100,7 +100,10 @@
     resize: none;
 }
 
-.terminalWindowInput {
+@media(max-width: 730px) {
+    .terminalContainer {
+        display: none;
+    }
     
 }
 

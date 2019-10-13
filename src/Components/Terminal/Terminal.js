@@ -4,6 +4,8 @@ import style from "./terminal.css";
 import CmdDispatcher from "./cmdDispatcher";
 import { delay } from "q";
 import { loadingAnimation, dotLoadingAnimation } from "./TerminalUtils";
+import { thisExpression } from "@babel/types";
+import VizSensor from "react-visibility-sensor";
 
 class Terminal extends React.Component {
   constructor(props) {
@@ -13,18 +15,27 @@ class Terminal extends React.Component {
       terminalMsg: "",
       history: "",
       currentCmd: "",
-      isWriting: false
+      isWriting: true,
+      initAnimation: false,
+      ready: false
     };
     this.cmdDispatcher = new CmdDispatcher();
   }
 
   componentDidMount() {
-    this.initTerminalText();
+    this.setState({ ready: true });
   }
 
-  ani100 = 1;
-  ani500 = 5;
-  ani750 = 7;
+  startAnimation = () => {
+    if (!this.state.initAnimation && this.state.ready) {
+      this.setState({ initAnimation: true });
+      this.initTerminalText();
+    }
+  };
+
+  ani100 = 100;
+  ani500 = 500;
+  ani750 = 750;
 
   initTerminalText = async () => {
     // Initial initialize text
@@ -72,7 +83,7 @@ class Terminal extends React.Component {
     this.appendText("\nroot@UlsanFAQBot:/usr#");
     await delay(this.ani500);
     await this.animateText(
-      " sudo python -verbose -benign  -humor=75% -instantKill=true -brain=NEAT UlsanBot.py",
+      " sudo python -verbose -benign -humor=75% -instantKill=true -brain=NEAT UlsanBot.py",
       this.ani100
     );
     this.appendText("\n\npassword: ");
@@ -105,6 +116,7 @@ class Terminal extends React.Component {
   prepareUserInput = () => {
     this.appendText("\n\n@UlsanFAQBot:cmd$ ");
     this.updateHistory(this.state.terminalMsg);
+    this.setState({ isWriting: false });
   };
 
   dotLoader = async (text, time) => {
@@ -166,7 +178,12 @@ class Terminal extends React.Component {
     let cmd = this.state.currentCmd;
 
     if (key === "Enter") {
-      this.handleCommand();
+      if (!this.state.isWriting) {
+        this.handleCommand();
+      }
+      this.ani100 = 1;
+      this.ani500 = 5;
+      this.ani750 = 7;
     } else {
       cmd += key;
       this.updateCommand(cmd);
@@ -175,7 +192,16 @@ class Terminal extends React.Component {
 
   handleCommand = async () => {
     let cmd = this.state.currentCmd;
-    await this.cmdDispatcher.handleCommand(cmd);
+    let answer = await this.cmdDispatcher.handleCommand(cmd);
+    if (answer.speed === 0) {
+      this.appendText(answer.message);
+    } else {
+      this.appendText("\n");
+      this.setState({ isWriting: true });
+      await this.animateText(`> ${answer.message}`, answer.speed);
+      this.setState({ isWriting: false });
+    }
+
     this.appendText("\n@UlsanFAQBot:cmd$ ");
     this.updateHistory(this.state.terminalMsg);
     this.updateCommand("");
@@ -206,36 +232,39 @@ class Terminal extends React.Component {
 
   render() {
     return (
-      <div className="terminalContainer">
-        <div className="terminalTitle">Learn more about Ulrik</div>
-        <div className="terminalWindow">
-          <div className="terminalWindowTopBar">
-            <div className="terminalWindowMenuPoints">
-              <div className="redQuit"></div>
-              <div className="yellowMinimize"></div>
-              <div className="greenEnhance"></div>
+      <VizSensor onChange={this.startAnimation}>
+        <div className="terminalContainer">
+          <div className="terminalTitle">Learn more about Ulrik</div>
+          <div className="terminalWindow">
+            <div className="terminalWindowTopBar">
+              <div className="terminalWindowMenuPoints">
+                <div className="redQuit"></div>
+                <div className="yellowMinimize"></div>
+                <div className="greenEnhance"></div>
+              </div>
+            </div>
+            <div className="terminalWindowTopBarTitle">
+              <img
+                className="terminalWindowTopBarIcon"
+                src="macHomeIcon.png"
+                alt="macHomeIcon"
+              ></img>
+              <div>Ulrik Sandberg --bash - 80x24</div>
+            </div>
+            <div className="terminalWindowContent">
+              <textarea
+                ref={this.textAreaRef}
+                className="terminalWindowTextArea"
+                value={this.state.terminalMsg}
+                onKeyUp={this.onBackspace}
+                onKeyPress={this.onKeyPress}
+                onChange={() => console.log()}
+                spellCheck="false"
+              ></textarea>
             </div>
           </div>
-          <div className="terminalWindowTopBarTitle">
-            <img
-              className="terminalWindowTopBarIcon"
-              src="macHomeIcon.png"
-              alt="macHomeIcon"
-            ></img>
-            <div>Ulrik Sandberg --bash - 80x24</div>
-          </div>
-          <div className="terminalWindowContent">
-            <textarea
-              ref={this.textAreaRef}
-              className="terminalWindowTextArea"
-              value={this.state.terminalMsg}
-              onKeyUp={this.onBackspace}
-              onKeyPress={this.onKeyPress}
-              onChange={() => console.log()}
-            ></textarea>
-          </div>
         </div>
-      </div>
+      </VizSensor>
     );
   }
 }
