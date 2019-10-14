@@ -8,6 +8,8 @@ import Info from "../../Components/Info/Info";
 import MainContentCard from "../../Components/MainContentCard/MainContentCard";
 import TechnicalInfo from "../../Components/Info/TechnicalInfo";
 import Terminal from "../../Components/Terminal/Terminal";
+import ExploreMore from "../../Components/ExploreMore/ExploreMore";
+import Footer from "../../Components/Footer/Footer";
 
 import ThreeCanvas from "../../Components/Three/ThreeCanvas";
 
@@ -23,8 +25,9 @@ const ProfilePage = () => {
         <Info></Info>
         <TechnicalInfo></TechnicalInfo>
         <Terminal></Terminal>
-        <textarea></textarea>
+        <ExploreMore></ExploreMore>
       </MainContentCard>
+      <Footer></Footer>
     </div>
   );
 };

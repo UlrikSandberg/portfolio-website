@@ -53,6 +53,15 @@ const Info = () => {
             >
               <i className={`fab fa-linkedin`} />
             </Button>
+            <Button
+              className={classes.socialIcon}
+              href="mailto:ujsandberg@gmail.com"
+            >
+              <i className={`fas fa-at`} />
+            </Button>
+            <Button className={classes.socialIcon} href="">
+              <i className={`fas fa-file-contract`} />
+            </Button>
           </div>
         </div>
       </div>

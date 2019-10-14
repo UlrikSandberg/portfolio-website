@@ -33,7 +33,7 @@ const appBarMuiStyles = theme => ({
     fontSize: "14px",
     borderRadius: "3px",
     textTransform: "none",
-    color: "#555",
+    color: "inherit",
     padding: "8px 16px",
     letterSpacing: "unset",
     marginLeft: "1px",
@@ -41,16 +41,16 @@ const appBarMuiStyles = theme => ({
   },
   blogIcon: {
     marginRight: "6px",
-    color: "#555",
+    color: "inherit",
     fontSize: "2.3em"
   },
   projectsIcon: {
     marginRight: "6px",
-    color: "#555"
+    color: "inherit"
   },
   socialIcons: {
     marginRight: "7px",
-    color: "#555",
+    color: "inherit",
     fontSize: "1.5em"
   },
   drawerPaper: {

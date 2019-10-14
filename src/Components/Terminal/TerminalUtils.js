@@ -351,6 +351,15 @@ const helloNode = () => {
   return new Node(hello_id, hello_keys, 5, false, {}, hello_message, 75);
 };
 
+// Tools section
+const tools_id = "tools:id";
+const tools_keys = ["tools", "tool"];
+const tools_message =
+  "Ulrik has experience with alot of different technologies, amongst others are: \n Docker, Git, React, React-Redux, Xamarin Forms, Asp.Net Core 2.+^, MongoDB, SQL, Azure DevOps, Azure, Elastic Search, Postman, CircleCI, pygame, SendGrid";
+const toolsNode = () => {
+  return new Node(tools_id, tools_keys, 5, false, {}, tools_message, 50);
+};
+
 const randomKnowledgeFunction = () => {
   let randomList = [
     hobby_message,
@@ -363,7 +372,8 @@ const randomKnowledgeFunction = () => {
     cm_message,
     beer_message,
     beverage_message,
-    movie_message
+    movie_message,
+    tools_message
   ];
   return randomList[Math.floor(Math.random() * randomList.length)];
 };
@@ -375,6 +385,7 @@ const helpMsg = () => {
   family \t \t ulsan\n
   ulrik  \t \t languages\n
   website\t \t champagne_moments or cm \n
+  tools \t \t \n
   favorite beer, car, beverage, movie \n`;
 };
 
@@ -445,5 +456,6 @@ export {
   beverageNode,
   carNode,
   movieNode,
-  helloNode
+  helloNode,
+  toolsNode
 };

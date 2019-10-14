@@ -48,7 +48,9 @@ export default function(sketch) {
       lastFrameEnd = sketch._lastFrameTime;
       return;
     }
-    sketch.background(255, 255, 255); // <-- Resets the background to a white color
+    sketch.background(0, 0, 0, 0.0);
+    sketch.clear(); // <-- Resets the background to a white color
+
     if (particleSystem) {
       particleSystem.process(deltaT, sketch, mousePos); // <-- Ask the particle system to process all particles with respect to the passed time deltaT
       particleSystem.draw(sketch); // <-- Ask the particle system to draw all particles provided the sketch parameter
@@ -68,7 +70,7 @@ class ParticleSystem {
           randIntInRanges(-35, -10, 10, 35)
         ),
         randInt(2, 4),
-        randInt(0, 200)
+        randInt(255, 255)
       );
     }
   }
@@ -82,7 +84,8 @@ class ParticleSystem {
             randIntInRanges(35, -20, 20, 35),
             randIntInRanges(-35, -20, 20, 35)
           ),
-          randInt(2, 4)
+          randInt(2, 4),
+          randInt(255, 255)
         )
       );
     }
@@ -96,7 +99,8 @@ class ParticleSystem {
       let distToMouse = part.distanceToParticle(mousePos);
       //Draw lines to mounts
       if (distToMouse < 200) {
-        sketch.stroke(255 * (distToMouse / 200));
+        //sketch.stroke(255 * (1 - distToMouse / 200)); <-- For black values
+        sketch.stroke(`rgba(255,255,255,${1 - distToMouse / 200})`);
         sketch.line(part.position.x, part.position.y, mousePos.x, mousePos.y);
         //Gravitate the particles slightly towards in the direction of the mouse
         let gravitationalDirection = mousePos.subtractCopy(part.position);
@@ -115,7 +119,8 @@ class ParticleSystem {
         let distance = part.distanceToParticle(adjacentPart.position);
         if (distance < 100) {
           // Should draw a line between the two particles
-          sketch.stroke(255 * (distance / 100));
+          //sketch.stroke(255 * (1 - distance / 100)); <-- Black values
+          sketch.stroke(`rgba(255,255,255,${1 - distance / 100})`);
           sketch.line(
             part.position.x,
             part.position.y,

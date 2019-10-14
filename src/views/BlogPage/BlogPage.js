@@ -6,7 +6,8 @@ import P5Wrapper from "../../Components/P5/P5Wrapper";
 import seed from "../../Components/P5/DynamicBG";
 import SectionSeperator from "../../Components/SectionSeperator/SectionSeperator";
 import ThreeCanvas from "../../Components/Three/ThreeCanvas";
-import BlogPostPreviewCard from "../../Components/BlogPostPreviewCard/BlogPostPreviewCard";
+import BlogPostPreviewCard from "../../Components/Cards/BlogPostPreviewCard/BlogPostPreviewCard";
+import Footer from "../../Components/Footer/Footer";
 
 import style from "./blogPage.css";
 
@@ -21,6 +22,7 @@ const BlogPage = () => {
       <MainContentCard>
         <BlogPostPreviewCard></BlogPostPreviewCard>
       </MainContentCard>
+      <Footer></Footer>
     </div>
   );
 };

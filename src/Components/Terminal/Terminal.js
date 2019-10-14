@@ -166,9 +166,10 @@ class Terminal extends React.Component {
 
   inputChange = () => {
     let ele = this.textAreaRef.current;
-
-    if (ele.clientHeight < ele.scrollHeight) {
-      ele.scrollTop = ele.scrollHeight;
+    if (ele !== null) {
+      if (ele.clientHeight < ele.scrollHeight) {
+        ele.scrollTop = ele.scrollHeight;
+      }
     }
   };
 
@@ -185,8 +186,10 @@ class Terminal extends React.Component {
       this.ani500 = 5;
       this.ani750 = 7;
     } else {
-      cmd += key;
-      this.updateCommand(cmd);
+      if (!this.state.isWriting) {
+        cmd += key;
+        this.updateCommand(cmd);
+      }
     }
   };
 

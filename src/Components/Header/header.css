@@ -5,6 +5,7 @@
     margin-bottom: 20px;
     z-index: 1000;
     width: 100%;
+    color: white;
 }
 
 .burgerMenu {
@@ -44,8 +45,14 @@
     background-color: transparent;
 }
 
+.appBarTop .burgerMenu span {
+    background-color: transparent;
+    color: rgba(255,255,255, 0.9);
+}
+
 .appBarScrolled {
     background-color: white;
+    color: #555;
     border-radius: 4px;
     box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
     transition: all 150ms ease 0s;

@@ -5,6 +5,6 @@
     min-height: 7vh;
     z-index: 10;
     position: relative;
-    display: flex;
+    display: none;
     justify-content: center;
 }

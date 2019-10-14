@@ -5,6 +5,7 @@ import P5Wrapper from "../../Components/P5/P5Wrapper";
 import seed from "../../Components/P5/DynamicBG";
 import SectionSeperator from "../../Components/SectionSeperator/SectionSeperator";
 import MainContentCard from "../../Components/MainContentCard/MainContentCard";
+import Footer from "../../Components/Footer/Footer";
 
 const ProjectsPage = () => {
   return (
@@ -17,6 +18,7 @@ const ProjectsPage = () => {
       <MainContentCard>
         <h3 className="infoTitle">Projects</h3>
       </MainContentCard>
+      <Footer></Footer>
     </div>
   );
 };

@@ -20,7 +20,8 @@ import {
   beverageNode,
   carNode,
   movieNode,
-  helloNode
+  helloNode,
+  toolsNode
 } from "./TerminalUtils";
 import { Favorite } from "@material-ui/icons";
 
@@ -213,6 +214,7 @@ class Network {
     let car = carNode();
     let movie = movieNode();
     let hello = helloNode();
+    let tools = toolsNode();
 
     // Node association
     what.addNeighboor(is);
@@ -256,7 +258,8 @@ class Network {
       beverage,
       car,
       movie,
-      hello
+      hello,
+      tools
     );
   };
 
