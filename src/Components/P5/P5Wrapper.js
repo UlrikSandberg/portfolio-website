@@ -18,11 +18,16 @@ class P5Wrapper extends React.Component {
     this.canvas.setReadyCallBack(this.resizeCanvas);
 
     window.addEventListener("resize", this.resizeCanvas);
+    this.forceResize();
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeCanvas);
     this.canvas.dispose();
   }
+
+  forceResize = () => {
+    this.resizeCanvas();
+  };
 
   resizeCanvas = () => {
     this.canvas.pushResize(
@@ -32,7 +37,16 @@ class P5Wrapper extends React.Component {
   };
 
   render() {
-    return <div className="p5Canvas" ref={this.canvasRef} id="sketch-p5"></div>;
+    return (
+      <div
+        style={{
+          backgroundImage: `${this.props.linearBackground}`
+        }}
+        className="p5Canvas"
+        ref={this.canvasRef}
+        id="sketch-p5"
+      ></div>
+    );
   }
 }
 

@@ -12,3 +12,50 @@
     align-items: center
 }
 
+.blogPageTitle {
+    display: inline-block;
+    position: relative;
+    margin: 3rem 0 0.875rem;
+    min-height: 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+}
+
+.blogPageTitleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.blogPostsGrid {
+    display: grid;
+    width: 100%;
+    grid-gap: 30px;
+    margin-bottom: 400px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.blogPostsGridSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 991px) {
+    .blogPostsGrid {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    }
+}
+
+@media(max-width: 490px) {
+    .blogPostsGrid {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

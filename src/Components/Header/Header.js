@@ -318,7 +318,7 @@ const Header = props => {
 
   const classes = useStyles();
   return (
-    <header className="appBar">
+    <header className="appBar appBarTop">
       <div className="appBarContext">
         <Link className={classes.link} to="/">
           <Button className={`${classes.title}`}>#UlrikSandberg</Button>

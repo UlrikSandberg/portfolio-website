@@ -7,18 +7,14 @@ import ImageCard from "../Cards/ImageCardWithButton/ImageCard";
 const ExploreMore = () => {
   return (
     <div className="exploreMoreContainer">
-      <div className="exploreMoreSeperator">
-        <div className="exploreMoreSeperatorLine"></div>
-      </div>
-      <div className="exploreMoreGrid">
-        <div className="exploreMoreGridSection">
+      <div className="exploreMoreContext">
+        <div className="exploreMoreTitle">Explore More...</div>
+        <div className="exploreMoreGrid">
           <ImageCard
-            image="blog2.jpg"
+            image="blog3.jpg"
             title="Blog"
             destination="blog-page"
           ></ImageCard>
-        </div>
-        <div className="exploreMoreGridSection">
           <ImageCard
             image="projects.jpg"
             title="Projects"
@@ -33,16 +29,26 @@ const ExploreMore = () => {
 export default ExploreMore;
 
 /*
-<ImageCard
-            onClick={() => console.log("Blog clicked!")}
-            image="blog2.jpg"
+<div className="exploreMoreContainer">
+      <div className="exploreMoreSeperator">
+        <div className="exploreMoreSeperatorLine"></div>
+      </div>
+      <div className="exploreMoreGrid">
+        <div className="exploreMoreGridSection">
+          <ImageCard
+            image="blog3.jpg"
             title="Blog"
+            destination="blog-page"
           ></ImageCard>
-
-<ImageCard
-            onClick={() => console.log("Blog clicked!")}
+        </div>
+        <div className="exploreMoreGridSection">
+          <ImageCard
             image="projects.jpg"
             title="Projects"
+            destination="projects"
           ></ImageCard>
+        </div>
+      </div>
+    </div>
 
 */

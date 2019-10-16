@@ -1,0 +1,126 @@
+.projectsPageTitleContainer {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectsPageTitle {
+    display: inline-block;
+    position: relative;
+    margin: 3rem 0 0.875rem;
+    min-height: 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+}
+
+.champagneMomentsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.brandLogo {
+    max-width: 150px;
+    max-height: 150px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2);   
+}
+
+.flexColoumn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flexRowNoWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.brandGrid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+}
+
+.momentsImageSlider {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 6px;
+    padding: 0 0 0 0;
+}
+
+.brandTitle {
+    display: inline-block;
+    position: relative;
+    margin: 30px 0 30px 0;
+    min-height: 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+}
+
+.momentsDescription {
+    margin: -40px 0 0 -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textLinks {
+    text-decoration: underline;
+    background-color: inherit;
+    color: inherit;
+}
+
+.carouselContainer {
+    padding: 30px;
+}
+
+@media(max-width: 991px) {
+    .momentsDescription {
+        font-size:15px;
+    }
+}
+
+@media(max-width: 767px) {
+    .momentsDescription {
+        margin: 0 0 0 0;
+    }
+    .carouselContainer {
+        padding: 0 0 0 0;
+    }
+    .momentsDescription {
+        font-size:14px;
+    }
+}
+
+@media(max-width: 350px) {
+    .brandTitle {
+        font-size: 1.3rem;
+    }
+    .carouselContainer {
+        padding: 0 0 0 0;
+    }
+}

@@ -18,15 +18,19 @@ const ProfilePage = () => {
     <div>
       <Header></Header>
       <div className="headerContainer">
-        <P5Wrapper seed={seed} />
+        <P5Wrapper
+          seed={seed}
+          linearBackground={`linear-gradient(to bottom right, #000000a6, #029195)`}
+        />
         <SectionSeperator></SectionSeperator>
       </div>
       <MainContentCard>
         <Info></Info>
         <TechnicalInfo></TechnicalInfo>
         <Terminal></Terminal>
-        <ExploreMore></ExploreMore>
       </MainContentCard>
+
+      <ExploreMore></ExploreMore>
       <Footer></Footer>
     </div>
   );

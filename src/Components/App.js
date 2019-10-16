@@ -11,6 +11,7 @@ import appStyle from "./App.css";
 import ProfilePage from "../views/ProfilePage/ProfilePage";
 import BlogPage from "../views/BlogPage/BlogPage";
 import ProjectsPage from "../views/ProjectsPage/ProjectsPage";
+import BlogPost from "../views/BlogPost/BlogPost";
 
 var hist = createBrowserHistory();
 
@@ -19,6 +20,7 @@ const App = () => {
     <Router history={hist}>
       <Switch>
         <Route path="/blog-page" component={BlogPage} />
+        <Route path="/blog-post/:id" component={BlogPost} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/" component={ProfilePage} />
       </Switch>
