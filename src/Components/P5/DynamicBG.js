@@ -1,12 +1,16 @@
 import React from "react";
 import { thisExpression } from "@babel/types";
+import { number } from "prop-types";
 
 let windowWidth = 0;
 let windowHeight = 0;
+let particleDensity = 0;
+let totalNumberOfParticles = 0;
 
 export default function(sketch) {
   let particleSystem = null;
   let lastFrameEnd = 0;
+  totalNumberOfParticles = 0;
   let mousePos = new Vector2d(sketch.mouseX, sketch.mouseY);
   let readyCallback = () => {};
 
@@ -31,6 +35,7 @@ export default function(sketch) {
   };
 
   sketch.windowResized = () => {
+    particleDensity = (windowWidth * windowHeight) / 6781;
     sketch.resizeCanvas(windowWidth, windowHeight);
   };
 
@@ -72,6 +77,7 @@ class ParticleSystem {
         randInt(2, 4),
         randInt(255, 255)
       );
+      totalNumberOfParticles++;
     }
   }
 
@@ -88,6 +94,7 @@ class ParticleSystem {
           randInt(255, 255)
         )
       );
+      totalNumberOfParticles++;
     }
   }
 
@@ -138,7 +145,11 @@ class ParticleSystem {
 
   draw(sketch) {
     for (let i = 0; i < this.particles.length; i++) {
-      this.particles[i].draw(sketch);
+      if (this.particles[i].shouldDie) {
+        this.particles.splice(i, 1);
+      } else {
+        this.particles[i].draw(sketch);
+      }
     }
   }
 }
@@ -221,6 +232,7 @@ class Particle {
     this.radius = radius;
     this.diameter = radius * 2;
     this.color = color;
+    this.shouldDie = false;
   }
 
   process(deltaT) {
@@ -228,21 +240,32 @@ class Particle {
     this.position.weigthedAdd(this.velocity, deltaT);
 
     if (this.position.x < 0) {
+      this.determineLife();
       this.position.x = windowWidth;
     }
     if (this.position.x > windowWidth) {
+      this.determineLife();
       this.position.x = 0;
     }
 
     if (this.position.y > windowHeight) {
+      this.determineLife();
       this.position.y = 0;
     }
 
     if (this.position.y < 0) {
+      this.determineLife();
       this.position.y = windowHeight;
     }
 
     this.acceleration.multiply(0);
+  }
+
+  determineLife() {
+    if (totalNumberOfParticles > particleDensity) {
+      this.shouldDie = true;
+      totalNumberOfParticles--;
+    }
   }
 
   applyForce(vector2d) {

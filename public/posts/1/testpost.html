@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script type='text/javascript'>hljs.initHighlightingOnLoad();
+    $('code').each(function() {
+  var that = $(this);
+  // cache the content of 'code'
+  var html = that.html().trim();
+  that.empty();
+  // escape the content
+  that.text(html);
+});</script>
+<style>
+
+
+body {
+    background-color: #ffffff;
+    color: #3c4858;
+    margin: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 16px;
+    margin: 0px;
+}
+
+.brooks {
+	 position: relative;
+	 font-size: 2.4em;
+	 line-height: 1.5em;
+	 font-style: italic;
+}
+ .brooks:before {
+	 content: '\201C';
+	 position: absolute;
+	 top: 0.25em;
+	 left: -0.15em;
+	 color: #e6e6e6;
+	 font-size: 6em;
+	 z-index: -1;
+}
+ .ludwig {
+	 position: relative;
+	 padding-left: 1em;
+	 border-left: 0.2em solid #4d91b3;
+	 font-size: 2.4em;
+	 line-height: 1.5em;
+	 font-weight: 100;
+}
+ .ludwig:before, .ludwig:after {
+	 content: '\201C';
+	 color: #4d91b3;
+}
+ .ludwig:after {
+	 content: '\201D';
+}
+ .groucho {
+	 position: relative;
+	 font-size: 2.4em;
+	 line-height: 1.5em;
+}
+ .groucho footer {
+	 font-size: 0.6em;
+	 font-weight: 700;
+	 color: #d1d1d1;
+	 float: right;
+}
+ .groucho footer:before {
+	 content: '\2015';
+}
+ .groucho:after {
+	 content: '\201D';
+	 position: absolute;
+	 top: 0.28em;
+	 right: 0;
+	 font-size: 6em;
+	 font-style: italic;
+	 color: #e6e6e6;
+	 z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+.context {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    display: inline-block;
+    position: relative;
+    margin: 1.75rem 0 0.875rem;
+    min-height: 32px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    font-size: 1.5625rem;
+    line-height: 1.4em;
+}
+
+.pre {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    overflow-x: auto;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-align: left;
+    padding: 20px 30px 20px 30px;
+    margin: 30px 0 30px 0;
+}
+
+pre {
+    max-width: 700px;
+    width: 100%;
+    overflow-x: 100%;
+    text-align: left;
+}
+
+pre code {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    border-radius: 3px;
+    text-align: left;
+    padding: 20px 0px 20px 20px!important;
+}
+
+code {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 1px 2px 1px 2px;
+}
+
+</style>
+</head>
+<body>
+    <div class="context">
+<div class="container">
+    
+        <div class="title">Citation and quotes</div>
+        <blockquote class="brooks">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        </blockquote>
+
+        <blockquote class="ludwig">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        </blockquote>
+
+        <blockquote class="groucho">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <footer>Einstein</footer>
+        </blockquote>
+        <br></br>
+        <div class="title">Code snippets</div>
+            <pre>
+    <code class="javascript">$(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });</code>
+    </pre>
+            
+        <div>We may also be interested in making in line code statements <code class="bash">sudo apt get clone</code> just like that</div>
+
+        <div class="title">Equations with MathJax and LaTeX</div>
+        <p> Pure MathJax
+                When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]
+            </p>
+            <p> With LaTeX
+                $$\frac{1}{4}$$
+                </p>
+        <div class="title">Description</div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="title">Images</div>
+        <img src="/blog3.jpg"></img>
+    
+</div>
+
+</div>
+<script>
+
+</script>
+</body>
+</html>

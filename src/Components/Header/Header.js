@@ -165,6 +165,7 @@ const Header = props => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", validateOpenDrawer);
 
+    handleScroll();
     return function cleanup() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", validateOpenDrawer);
@@ -179,8 +180,7 @@ const Header = props => {
 
   const handleScroll = () => {
     const pageYOffset = window.pageYOffset;
-
-    if (pageYOffset > 300) {
+    if (pageYOffset > window.innerHeight * props.scrollHeight) {
       //Add Appbar scroll appearance
       document.body
         .getElementsByClassName("appBar")[0]

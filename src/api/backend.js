@@ -24,7 +24,7 @@ const blogPosts = [
       prePostInSeries: "",
       nextPostInSeries: ""
     },
-    blogContentUrl: "/blogPosts/id.html"
+    blogContentUrl: "/posts/1/testpost.html"
   }
 ];
 

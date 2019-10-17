@@ -16,7 +16,7 @@ import ThreeCanvas from "../../Components/Three/ThreeCanvas";
 const ProfilePage = () => {
   return (
     <div>
-      <Header></Header>
+      <Header scrollHeight="0.25"></Header>
       <div className="headerContainer">
         <P5Wrapper
           seed={seed}

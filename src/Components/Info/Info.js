@@ -59,7 +59,11 @@ const Info = () => {
             >
               <i className={`fas fa-at`} />
             </Button>
-            <Button className={classes.socialIcon} href="">
+            <Button
+              style={{ display: "none" }}
+              className={classes.socialIcon}
+              href=""
+            >
               <i className={`fas fa-file-contract`} />
             </Button>
           </div>
@@ -70,10 +74,12 @@ const Info = () => {
           Hello, I'm 23 years old, born and raised in Denmark. I'm a full-time
           <b> techie</b>, interested in all things software and science. I
           started learning software in 2016, when my brother and I created{" "}
-          <Link className="textLink">Champagne Moments</Link>, a social media
-          App for champagne lovers! I have since been studying BSc (a fancy word
-          for bachelor) in Software Engineering at the University of Southern
-          Denmark from 2017 and is still going strong.{" "}
+          <Link to="/projects" className="textLink">
+            Champagne Moments
+          </Link>
+          , a social media App for champagne lovers! I have since been studying
+          BSc (a fancy word for bachelor) in Software Engineering at the
+          University of Southern Denmark from 2017 and is still going strong.{" "}
         </p>
       </div>
       <div className="infoContainerSplitter"></div>

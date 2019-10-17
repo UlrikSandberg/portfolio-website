@@ -19,7 +19,6 @@ class BlogPage extends React.Component {
   };
 
   componentDidMount() {
-    console.log("Hello");
     this.props.fetchBlogPosts(0, 10);
   }
 
@@ -53,7 +52,7 @@ class BlogPage extends React.Component {
   render() {
     return (
       <div>
-        <Header highligthedIndex="1"></Header>
+        <Header scrollHeight="0.25" highligthedIndex="1"></Header>
         <div className="headerContainer">
           <P5Wrapper
             seed={seed}

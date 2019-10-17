@@ -44,7 +44,7 @@ const ProjectsPage = () => {
 
   return (
     <div>
-      <Header highligthedIndex="2"></Header>
+      <Header scrollHeight="0.25" highligthedIndex="2"></Header>
       <div className="headerContainer">
         <P5Wrapper
           seed={seed}
