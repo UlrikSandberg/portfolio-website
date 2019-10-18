@@ -7,10 +7,17 @@ jobs:
           root: .
           paths:
             - .
-  
+  dockerize:
+    machine: true
+    steps:
+      - attach_workspace:
+          at: .
 
 workflows:
   version: 2
   one-stage-workflow:
     jobs:
       -test
+     -dockerize:
+        requires:
+          -test
