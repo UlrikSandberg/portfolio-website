@@ -13,9 +13,6 @@ jobs:
     steps:
     - attach_workspace:
         at: .
-    - run: pwd
-    - run: ls -a
-    - run: cd /src && ls -a
     - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
     - run: docker build -t $DOCKER_USER/ca-project:$CIRCLE_SHA1 .
     - run: docker push $DOCKER_USER/ca-project:$CIRCLE_SHA1
