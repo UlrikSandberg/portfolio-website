@@ -53,6 +53,7 @@ class BlogPost extends React.Component {
   };
 
   renderHeaderContent = () => {
+    console.log(this.props);
     if (this.props.blogPost) {
       return (
         <React.Fragment>

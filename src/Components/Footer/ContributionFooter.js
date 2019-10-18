@@ -5,7 +5,7 @@ import style from "./contributionFooter.css";
 const ContributionFooter = () => {
   return (
     <div className="contributionFooterContainer">
-      Favicon made by{" "}
+      Favicon and images made by{" "}
       <a
         className="contributionLink"
         href="https://www.flaticon.com/authors/freepik"
@@ -22,6 +22,15 @@ const ContributionFooter = () => {
         title="Flaticon"
       >
         www.flaticon.com
+      </a>{" "}
+      -{" "}
+      <a
+        className="contributionLink"
+        href="https://www.freepik.com"
+        target="_blank"
+        title="Freepik"
+      >
+        www.freepik.com
       </a>
     </div>
   );

@@ -14,8 +14,8 @@ const blogPosts = [
     title: "Test Post!",
     description:
       "It is always important to test all features properly! This is a test blog post with lorem ipsum content",
-    thumbnailImageUrl: "/blog3.jpg",
-    headerImageUrl: "/blog3.jpg",
+    thumbnailImageUrl: "/posts/1/testImage.jpg",
+    headerImageUrl: "/posts/1/testImage.jpg",
     timeStamp: new Date().toDateString(),
     categories: "AI, Python",
     series: {

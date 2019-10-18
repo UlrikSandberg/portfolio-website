@@ -39,10 +39,10 @@ const Footer = () => {
             <div>
               <a
                 target="_blank"
-                href="mailto:ujsandberg@gmail.com"
+                href="mailto:info.ulriksandberg@gmail.com"
                 rel="noopener"
               >
-                ujsandberg@gmail.com
+                info.ulriksandberg@gmail.com
               </a>
             </div>
           </div>

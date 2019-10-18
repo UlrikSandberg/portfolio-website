@@ -10,12 +10,12 @@ const ExploreMore = () => {
         <div className="exploreMoreTitle">Explore More...</div>
         <div className="exploreMoreGrid">
           <ImageCard
-            image="/blog3.jpg"
+            image="/images/commons/blogExploreMore.jpg"
             title="Blog"
             destination="blog-page"
           ></ImageCard>
           <ImageCard
-            image="/projects.jpg"
+            image="/images/commons/projectExploreMore.jpg"
             title="Projects"
             destination="projects"
           ></ImageCard>

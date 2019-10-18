@@ -55,7 +55,7 @@ const Info = () => {
             </Button>
             <Button
               className={classes.socialIcon}
-              href="mailto:ujsandberg@gmail.com"
+              href="mailto:info.ulriksandberg@gmail.com"
             >
               <i className={`fas fa-at`} />
             </Button>

@@ -33,9 +33,9 @@ class Terminal extends React.Component {
     }
   };
 
-  ani100 = 100;
-  ani500 = 500;
-  ani750 = 750;
+  ani100 = 80;
+  ani500 = 200;
+  ani750 = 350;
 
   initTerminalText = async () => {
     // Initial initialize text
@@ -107,7 +107,7 @@ class Terminal extends React.Component {
 
     await this.animateText(
       "> Hello I'm Ulsan your personal FAQ Bot. Type gossip to get random information or -help to get an overview.",
-      this.ani100
+      75
     );
 
     this.prepareUserInput();
