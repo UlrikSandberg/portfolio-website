@@ -249,7 +249,7 @@ class Terminal extends React.Component {
             <div className="terminalWindowTopBarTitle">
               <img
                 className="terminalWindowTopBarIcon"
-                src="macHomeIcon.png"
+                src="/images/commons/macHomeIcon.png"
                 alt="macHomeIcon"
               ></img>
               <div>Ulrik Sandberg --bash - 80x24</div>

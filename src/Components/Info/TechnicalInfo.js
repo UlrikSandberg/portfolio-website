@@ -25,24 +25,28 @@ class TechnicalInfo extends React.Component {
             <div className="front-side">
               <img
                 className="cubeLogo"
-                src="pythonLogo.png"
+                src="/images/codeLogos/pythonLogo.png"
                 alt="pythonLogo"
               ></img>
             </div>
             <div className="back-side">
               <img
                 className="cubeLogo"
-                src="javaScriptLogo.png"
+                src="/images/codeLogos/javaScriptLogo.png"
                 alt="javaScriptLogo"
               ></img>
             </div>
             <div className="left-side">
-              <img className="cubeLogo" src="javaLogo.png" alt="javaLogo"></img>
+              <img
+                className="cubeLogo"
+                src="/images/codeLogos/javaLogo.png"
+                alt="javaLogo"
+              ></img>
             </div>
             <div className="right-side">
               <img
                 className="cubeLogo"
-                src="cSharpLogo.png"
+                src="/images/codeLogos/cSharpLogo.png"
                 alt="cSharpLogo"
               ></img>
             </div>

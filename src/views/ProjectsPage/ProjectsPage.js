@@ -58,7 +58,7 @@ const ProjectsPage = () => {
         </div>
         <div className="champagneMomentsContainer">
           <div className="flexColoumn">
-            <img src="/cmLogo.png" className="brandLogo"></img>
+            <img src="images/cm/cmLogo.jpg" className="brandLogo"></img>
             <a
               className="textLinks"
               target="_blank"
@@ -71,22 +71,40 @@ const ProjectsPage = () => {
             <div className="carouselContainer">
               <Carousel>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/1.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/1.jpg"
+                  ></img>
                 </div>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/2.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/2.jpg"
+                  ></img>
                 </div>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/3.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/3.jpg"
+                  ></img>
                 </div>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/4.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/4.jpg"
+                  ></img>
                 </div>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/5.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/5.jpg"
+                  ></img>
                 </div>
                 <div>
-                  <img className="momentsImageSlider" src="/cm/6.jpg"></img>
+                  <img
+                    className="momentsImageSlider"
+                    src="/images/cm/6.jpg"
+                  ></img>
                 </div>
               </Carousel>
             </div>

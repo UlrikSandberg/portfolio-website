@@ -33,7 +33,7 @@ const Info = () => {
     <div className="infoContainer">
       <div>
         <div>
-          <img className="profileImage" src="ulrik.jpg"></img>
+          <img className="profileImage" src="images/commons/ulrik.jpg"></img>
         </div>
         <div className="infoTitles">
           <h3 className="infoTitle">Ulrik Sandberg</h3>

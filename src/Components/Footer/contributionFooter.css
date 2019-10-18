@@ -1,0 +1,10 @@
+.contributionFooterContainer {
+    font-size: 12px;
+    text-align: center;
+}
+
+.contributionLink {
+    text-decoration: underline;
+    background-color: inherit;
+    color: inherit;
+}
