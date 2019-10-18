@@ -4,10 +4,11 @@ jobs:
     steps:
       machine: true
       - checkout
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
+      steps:
+        - persist_to_workspace:
+            root: .
+            paths:
+              - .
   dockerize:
     machine: true
     steps:
