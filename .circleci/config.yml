@@ -22,8 +22,7 @@ jobs:
     - add_ssh_keys:
         fingerprints:
         - bc:f8:37:37:e7:c4:97:f1:6d:aa:9e:00:ed:84:d0:77
-    - run: ssh root@$PROD_IP "docker run -d -p 80:80 ulriksandberg/portfolio:$CIRCLE_SHA1"
-workflows:
+    - run: sh deployment.sh
   version: 2
   two_job_flow:
     jobs:
