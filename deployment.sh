@@ -1,10 +1,12 @@
 ssh root@$PROD_IP << EOF
 
-docker container stop $(docker container ls -aq)
+docker container stop portfolio
 
-docker container rm $(docker container ls -aq)
+docker container rm portfolio
 
-docker run -d -p 80:80 ulriksandberg/portfolio:$CIRCLE_SHA1
+docker image prune -f
+
+docker run -d -p 80:80 -name portfolio ulriksandberg/portfolio:$CIRCLE_SHA1
 
 exit
 EOF
