@@ -1,14 +1,13 @@
 version: 2.0
 jobs:
   test:
-    steps:
-      machine: true
-      steps:
-      - checkout
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
+    machine: true
+    steps:  
+    - checkout
+    - persist_to_workspace:
+        root: .
+        paths:
+          - .
   dockerize:
     machine: true
     steps:
