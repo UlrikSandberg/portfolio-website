@@ -8,16 +8,25 @@ jobs:
           paths:
             - .
   dockerize:
-    machine: true
-    steps:
-      - attach_workspace:
-          at: .
+    machine: true
+    steps:
+    - attach_workspace:
+        at: .
+    - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - run: docker build -t $DOCKER_USER/ca-project:$CIRCLE_SHA1 .
+    - run: docker push $DOCKER_USER/ca-project:$CIRCLE_SHA1
 
 workflows:
   version: 2
-  one-stage-workflow:
+  two_job_flow:
     jobs:
-      -test
-     -dockerize:
-        requires:
-          -test
+    - test
+    - dockerize:
+        requires:
+        - test
+    - deploy-product:
+        requires:
+        - dockerize
+        filters:
+          branches:
+            only: master
