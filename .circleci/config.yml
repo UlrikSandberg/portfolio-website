@@ -3,12 +3,12 @@ jobs:
   test:
     steps:
       machine: true
-      - checkout
       steps:
-        - persist_to_workspace:
-            root: .
-            paths:
-              - .
+      - checkout
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   dockerize:
     machine: true
     steps:
