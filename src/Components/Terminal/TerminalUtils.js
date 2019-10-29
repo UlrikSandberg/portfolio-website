@@ -360,6 +360,10 @@ const toolsNode = () => {
   return new Node(tools_id, tools_keys, 5, false, {}, tools_message, 50);
 };
 
+// Age section
+
+//
+
 const randomKnowledgeFunction = () => {
   let randomList = [
     hobby_message,

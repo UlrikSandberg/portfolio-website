@@ -12,6 +12,7 @@ import ProfilePage from "../views/ProfilePage/ProfilePage";
 import BlogPage from "../views/BlogPage/BlogPage";
 import ProjectsPage from "../views/ProjectsPage/ProjectsPage";
 import BlogPost from "../views/BlogPost/BlogPost";
+import ThreeView from "../views/ThreeView/ThreeView";
 
 var hist = createBrowserHistory();
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/blog-page" component={BlogPage} />
         <Route path="/blog-post/:id" component={BlogPost} />
         <Route path="/projects" component={ProjectsPage} />
+        <Route path="/trial" component={ThreeView} />
         <Route path="/" component={ProfilePage} />
       </Switch>
     </Router>
