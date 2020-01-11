@@ -25,6 +25,22 @@ const blogPosts = [
       nextPostInSeries: ""
     },
     blogContentUrl: "/posts/1/testpost.html"
+  },
+  {
+    id: "2",
+    title: "Autonomous Agents!",
+    description: "Some trial and errors while following along with the ",
+    thumbnailImageUrl: "/posts/1/testImage.jpg",
+    headerImageUrl: "/posts/1/testImage.jpg",
+    timeStamp: new Date().toDateString(),
+    categories: "AI, Python",
+    series: {
+      seriesId: "",
+      numberInSeries: "",
+      prePostInSeries: "",
+      nextPostInSeries: ""
+    },
+    blogContentUrl: "/posts/2/AutonomousAgents.html"
   }
 ];
 

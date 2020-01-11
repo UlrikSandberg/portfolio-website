@@ -13,6 +13,7 @@ import BlogPage from "../views/BlogPage/BlogPage";
 import ProjectsPage from "../views/ProjectsPage/ProjectsPage";
 import BlogPost from "../views/BlogPost/BlogPost";
 import ThreeView from "../views/ThreeView/ThreeView";
+import Steering from "../AutonomousAgents/SteeringBehaviours";
 
 var hist = createBrowserHistory();
 
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/blog-post/:id" component={BlogPost} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/trial" component={ThreeView} />
+        <Route path="/steering" component={Steering} />
         <Route path="/" component={ProfilePage} />
       </Switch>
     </Router>

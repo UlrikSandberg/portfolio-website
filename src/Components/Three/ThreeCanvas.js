@@ -118,8 +118,6 @@ class ThreeCanvas extends React.Component {
     // Array that holds a float number,
     var scales = new Float32Array(rows * coloumn);
 
-    var particles = new THREE.Geometry();
-
     var tripletStart = 0,
       iy = 0;
     for (let i = 0; i < rows; i++) {
