@@ -131,7 +131,7 @@ class TileGenerator {
       this.flying,
       this.activeTiles[this.activeTiles.length - 1]
     );
-    console.log(this.activeTiles.length - 1);
+    tile.color();
     this.scene.add(tile.getMesh());
     this.activeTiles.push(tile);
     this.tileNumber += 1;
@@ -152,7 +152,7 @@ class Tile {
       rows
     );
     this.material = new THREE.MeshBasicMaterial({
-      color: 0x00ff00,
+      vertexColors: THREE.FaceColors,
       side: THREE.DoubleSide,
       wireframe: true
     });
@@ -170,16 +170,17 @@ class Tile {
           simplex.noise2D(xOffset, yOffset),
           -1,
           1,
-          -200,
-          200
+          -2000,
+          2000
         );
         if (noiseValue < -100) {
           noiseValue = -100;
         }
+
         this.terrain.set(x, y, noiseValue);
-        xOffset += 0.05;
+        xOffset += 0.01;
       }
-      yOffset += 0.05;
+      yOffset += 0.01;
     }
     let vertices = this.mesh.geometry.vertices;
     for (let y = 0; y < this.rows + 1; y++) {
@@ -206,9 +207,55 @@ class Tile {
         synchronize[i].z = synchronizers[i].z;
       }
     }
-
     return yOffset;
   }
+
+  color = () => {
+    let geometry = this.mesh.geometry;
+    let vertices = geometry.vertices;
+    let faces = geometry.faces;
+
+    for (let i = 0; i < faces.length; i++) {
+      let va = vertices[faces[i].a];
+      let vb = vertices[faces[i].b];
+      let vc = vertices[faces[i].c];
+
+      if (this.checkWaterLevel(va, vb, vc)) {
+        faces[i].color.setHex(this.assignBeachTheme(va, vb, vc));
+      } else {
+        faces[i].color.setHex(0x00ff00);
+      }
+    }
+    this.mesh.geometry.colorsNeedUpdate = true;
+  };
+
+  checkWaterLevel = (va, vb, vc) => {
+    return va.z === -100 || vb.z === -100 || vc.z === -100;
+  };
+
+  assignBeachTheme = (va, vb, vc) => {
+    let depth = 0;
+    if (va.z === -100) {
+      depth++;
+    }
+    if (vb.z === -100) {
+      depth++;
+    }
+    if (vc.z === -100) {
+      depth++;
+    }
+
+    switch (depth) {
+      case 1:
+        return 0xc2b280;
+      case 2:
+        return 0xadd8e6;
+      case 3:
+        return 0x00008b;
+      default:
+        return 0x00008b;
+    }
+  };
 
   getMesh = () => {
     return this.mesh;

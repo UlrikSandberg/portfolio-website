@@ -7,7 +7,7 @@ let windowHeight = 0;
 let particleDensity = 0;
 let totalNumberOfParticles = 0;
 
-export default function(sketch) {
+export default function (sketch) {
   let particleSystem = null;
   let lastFrameEnd = 0;
   totalNumberOfParticles = 0;
@@ -30,7 +30,7 @@ export default function(sketch) {
     windowHeight = height;
   };
 
-  sketch.setReadyCallBack = cb => {
+  sketch.setReadyCallBack = (cb) => {
     readyCallback = cb;
   };
 
@@ -109,6 +109,7 @@ class ParticleSystem {
         //sketch.stroke(255 * (1 - distToMouse / 200)); <-- For black values
         sketch.stroke(`rgba(255,255,255,${1 - distToMouse / 200})`);
         sketch.line(part.position.x, part.position.y, mousePos.x, mousePos.y);
+
         //Gravitate the particles slightly towards in the direction of the mouse
         let gravitationalDirection = mousePos.subtractCopy(part.position);
         // Normalize the direction vector to one
