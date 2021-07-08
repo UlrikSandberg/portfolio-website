@@ -136,7 +136,7 @@ const areNode = () => {
 
 // Ulrik section
 const ulrik_id = "ulrik:id";
-const ulrik_keys = ["ulrik", "ulle", "ulriks", "ulrik's"];
+const ulrik_keys = ["ulrik", "ulle", "ullebjørn", "ulriks", "ulrik's"];
 const ulrikMsg =
   "What do you want to know about Ulrik? Maybe be more specific with: (how, what, who) is ulrik?";
 const ulrikNode = () => {
